@@ -1,8 +1,10 @@
 # NTFT-Enhanced
 
-Windows 10 ve 11 için ücretsiz, parola kilitli bir pornografi filtresi. Lisans anahtarı yoktur. Tarayıcı uzantısı henüz yoktur.
+Pornografi engelleyicisi. İnsanların ücretsiz bir zararlı içerik engelleme programına erişmesi için geliştirildi. Ayrıca virüs ve tam NSFW engellemesi yakında gelecek.
 
-English: a free Windows porn filter with a password lock. No license key. The browser extension and malware list are on the [roadmap](ROADMAP.md), not in the build yet.
+Windows 10 ve 11 için parola kilitlidir. Lisans anahtarı yoktur. Tarayıcı uzantısı henüz yoktur. Virüs listesi ve tam NSFW listesi [yol haritasında](ROADMAP.md), bu sürümde yok.
+
+English: a free Windows porn filter with a password lock, built so people can get a free harmful-content blocker. Virus blocking and a fuller NSFW list are coming. No license key. The browser extension is on the [roadmap](ROADMAP.md), not in the build yet.
 
 ![Pencere. Koruma kapalı, kilit duruyor. 76.796 alan adı listelenmiş.](docs/NTFT-Enhanced.png)
 
@@ -56,6 +58,8 @@ Arkadaş **Ayarlar → Kilidi kur** ile parolayı iki kez yazar. Kurtarma anahta
 ## Geliştirme
 
 .NET 8. Arayüz WPF, servis LocalSystem, kurulum ayrı bir programdır. Ayrıntı [ROADMAP.md](ROADMAP.md) dosyasındadır.
+
+Her gönderim ve çekme isteğinde GitHub Actions kodu tarar: CodeQL derlemeyi inceler, DevSkim kaynakta bilinen güvensiz kalıpları arar. Sonuçlar deponun Güvenlik sekmesine düşer.
 
 ## Lisans
 

@@ -1,0 +1,36 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1"
+
+jobs:
+  analyze:
+    name: Analyze C#
+    runs-on: windows-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: csharp
+          build-mode: manual
+      - name: Build
+        run: |
+          dotnet build src/NtftEnhanced.App/NtftEnhanced.App.csproj -c Release
+          dotnet build src/NtftEnhanced.Service/NtftEnhanced.Service.csproj -c Release
+          dotnet build src/NtftEnhanced.Setup/NtftEnhanced.Setup.csproj -c Release
+          dotnet build tests/NtftEnhanced.Core.Tests/NtftEnhanced.Core.Tests.csproj -c Release
+      - uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:csharp"

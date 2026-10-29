@@ -44,6 +44,8 @@ Porn tek başına dar bir kitle. Genel bir güvenlik duvarı veya çocuk filtres
 - [ ] Yalnız porn seçilirse ad NTFT-Enhanced kalır.
 - [ ] Malware de seçilirse ürün genel bir site engelleyicisine yaklaşır. Ad o zaman değişir. Aday ad KMSecurity’dir. Karar, kutu gerçekten çalışınca verilir.
 - [ ] Malware listesi de indirilen bir liste olur. Hosts dosyasının tamamı yine yazılmaz.
+- [ ] Virüs engeli.
+- [ ] Tam NSFW listesi. Şimdiki liste yalnızca pornografi dosyasıdır.
 
 ## Bilerek yok
 
