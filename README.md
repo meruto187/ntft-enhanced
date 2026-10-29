@@ -12,30 +12,26 @@ Bu görüntü 29 Ekim 2026 durumudur. Koruma kapalı, kilit duruyor. Liste inmi�
 
 - Liste [StevenBlack/hosts](https://github.com/StevenBlack/hosts) deposunun yalnızca pornografi dosyasıdır: `alternates/porn-only/hosts`. Reklam ve zararlı yazılım listesi alınmaz.
 - İndirme HTTPS ile gelir ve GitHub blob SHA-1 özeti ile doğrulanır. Doğrulama tutmazsa eski liste kalır.
-- Liste hosts dosyasına yazılmaz. On binlerce satır Windows’un ad çözümlemesini kilitler. WARP, Kaspersky, Steam ve Proton bu yüzden donmuştu. Eski bir NTFT bloğu hosts dosyasında duruyorsa koruma açılınca o blok silinir. Sizin diğer satırlarınız kalır.
+- Liste hosts dosyasına yazılmaz. On binlerce satır Windows’un ad çözümlemesini yavaşlatır. Eski bir NTFT bloğu hosts dosyasında duruyorsa koruma açılınca o blok silinir. Sizin diğer satırlarınız kalır.
 - Koruma açıkken yerel bir vekil, tarayıcının `CONNECT` satırındaki alan adına bakar. Sayfanın şifresi çözülmez. Vekil durursa PAC doğrudan bağlanır, internet kesilmez.
 - Engel olunca bildirim “Bir bağlantı engellendi” der. Alan adı bildirimde, günlükte ve durumda yazılmaz.
 - Parola PBKDF2-HMAC-SHA256 ile durur. Düz metin saklanmaz. Kurtarma anahtarı bir kez gösterilir. Beş yanlış denemeden sonra bekleme başlar ve yeniden açılışta da durur.
 - Liste elle güncellenir. Kendiliğinden güncelleme varsayılan olarak yedi günde bir çalışır. Kilitliyken bunu kapatmak parola ister. Listeyi yenilemek parola istemez.
 - Arayüz ortada bir güç düğmesi gösterir. **Koruma açık** ve **Kilitli** ayrı yazılır.
 
-## İki yol
+## Nasıl keser
 
 ```mermaid
 flowchart TD
   browser[Tarayici]
   proxy[Yerel vekil]
-  family[Cloudflare Family DNS]
   site[Site]
   browser --> proxy
   proxy -->|listede degil| site
   proxy -->|listede| block[Baglanti kesilir]
-  family -->|VPN kapali| browser
 ```
 
-VPN kapalıyken asıl ağ yolu Windows DNS’idir. TurkNet engeli DNS’te olduğu için Cloudflare Family (`1.1.1.3` / `1.0.0.3`) hem Discord’u açar hem yetişkin alan adını çözmez. Bu anahtar kodda vardır. Kurulumda kendiliğinden açılmaz. `microsoft.com` çözülmezse eski DNS geri gelir.
-
-VPN açıkken Proton veya WARP, Windows DNS’ini ve vekili tünelin dışında bırakır. NTFT Proton’un internetini kesmez. Tarayıcı adresini tünelin içinde görecek eklenti [yol haritasındadır](ROADMAP.md).
+İsteğe bağlı Cloudflare Family DNS (`1.1.1.3` / `1.0.0.3`) yetişkin alan adlarını çözümlemede keser. Kurulumda kendiliğinden açılmaz. `microsoft.com` çözülmezse eski DNS geri gelir. Ayrıntı [yol haritasında](ROADMAP.md).
 
 ## Ne yapmaz
 
