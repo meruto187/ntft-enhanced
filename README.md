@@ -4,7 +4,7 @@ Windows 10 ve 11 için ücretsiz, parola kilitli bir pornografi filtresi. Lisans
 
 English: a free Windows porn filter with a password lock. No license key. The browser extension and malware list are on the [roadmap](ROADMAP.md), not in the build yet.
 
-![Pencere. Koruma kapalı, kilit duruyor. 76.796 alan adı listelenmiş.](docs/pencere.png)
+![Pencere. Koruma kapalı, kilit duruyor. 76.796 alan adı listelenmiş.](docs/NTFT-Enhanced.png)
 
 Bu görüntü 29 Ekim 2026 durumudur. Koruma kapalı, kilit duruyor. Liste inmiş: 76.796 alan adı.
 
