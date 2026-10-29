@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>NtftEnhanced.App</RootNamespace>
+    <AssemblyName>NTFT-Enhanced</AssemblyName>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Remove="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NtftEnhanced.Core\NtftEnhanced.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\THIRD_PARTY_NOTICES.md" Link="THIRD_PARTY_NOTICES.md" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

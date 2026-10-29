@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>NtftEnhanced</RootNamespace>
+    <NoWarn>$(NoWarn);CA1416</NoWarn>
+    <AssemblyName>NtftEnhanced.Core</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="NtftEnhanced.Core.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.IO.Pipes.AccessControl" Version="5.0.0" />
+  </ItemGroup>
+</Project>

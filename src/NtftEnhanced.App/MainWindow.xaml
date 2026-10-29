@@ -1,0 +1,54 @@
+<Window x:Class="NtftEnhanced.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NTFT-Enhanced" Height="560" Width="440"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Background="#FAFAF9" FontFamily="Segoe UI" FontSize="14">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="#E7E5E4" BorderThickness="0,0,0,1" Padding="20,14">
+            <TextBlock Text="NTFT-Enhanced" FontWeight="Medium" Foreground="#1C1917"/>
+        </Border>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="320">
+            <Button x:Name="PowerButton" Width="88" Height="88" HorizontalAlignment="Center" Click="Power_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Circle" Background="#1C1917" CornerRadius="44">
+                            <Path x:Name="Glyph" Stroke="#FAFAF9" StrokeThickness="1.8"
+                                  StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+                                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                                  Data="M 12,3 L 12,11 M 7.2,6.2 A 7,7 0 1 0 16.8,6.2"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <TextBlock x:Name="StateText" Text="Kapalı" FontSize="28" FontWeight="Medium"
+                       Foreground="#1C1917" HorizontalAlignment="Center" Margin="0,18,0,0"/>
+            <TextBlock x:Name="LockText" Foreground="#9A3412" HorizontalAlignment="Center" Margin="0,4,0,0"/>
+            <TextBlock x:Name="MetaText" Foreground="#57534E" HorizontalAlignment="Center" Margin="0,8,0,0" TextWrapping="Wrap" TextAlignment="Center"/>
+            <TextBlock x:Name="BlockText" Foreground="#1C1917" HorizontalAlignment="Center" Margin="0,8,0,0"/>
+            <TextBox x:Name="SearchBox" Margin="0,28,0,0" Padding="10,8" TextChanged="SearchBox_TextChanged"/>
+            <ListBox x:Name="Results" MaxHeight="120" Margin="0,8,0,0" BorderBrush="#D6D3D1" Visibility="Collapsed"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0">
+                <Button Content="Listeyi güncelle" Padding="14,8" Margin="0,0,8,0" Click="Update_Click"/>
+                <Button x:Name="SettingsButton" Content="Ayarlar" Padding="14,8" Click="Settings_Click">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem x:Name="LockMenu" Header="Kilidi kur" Click="Lock_Click"/>
+                            <MenuItem Header="Sertleştirme" Click="Harden_Click"/>
+                            <MenuItem x:Name="AutoMenu" Header="Kendiliğinden güncelleme" Click="Auto_Click"/>
+                            <Separator/>
+                            <MenuItem Header="Kur / bağlan" Click="Install_Click"/>
+                            <MenuItem Header="Kaldır" Click="Uninstall_Click"/>
+                            <MenuItem Header="Lisans" Click="About_Click"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
