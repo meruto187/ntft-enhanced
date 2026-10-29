@@ -1,6 +1,6 @@
 # NTFT-Enhanced
 
-Windows 10 ve 11 için ücretsiz, parola kilitli bir pornografi filtresi. Lisans anahtarı yoktur. Tarayıcı uzantısı henüz yoktur. Eski sürümdeki NoFap sayacı ve VPN bu depoya alınmaz.
+Windows 10 ve 11 için ücretsiz, parola kilitli bir pornografi filtresi. Lisans anahtarı yoktur. Tarayıcı uzantısı henüz yoktur.
 
 English: a free Windows porn filter with a password lock. No license key. The browser extension and malware list are on the [roadmap](ROADMAP.md), not in the build yet.
 
